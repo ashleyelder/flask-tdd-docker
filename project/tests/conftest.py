@@ -1,12 +1,11 @@
 import pytest
 
-from project import app, db
-
-# define a test_app and test_database (for initializing a test database) fixture
+from project import create_app, db  # updated
 
 
 @pytest.fixture(scope='module')
 def test_app():
+    app = create_app()  # new
     app.config.from_object('project.config.TestingConfig')
     with app.app_context():
         yield app  # testing happens here

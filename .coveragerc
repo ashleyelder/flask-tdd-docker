@@ -1,3 +1,2 @@
- exclude tests from the coverage results
 [run]
 omit = project/tests/*
